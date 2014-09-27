@@ -12,7 +12,9 @@ module.exports = {
     },
 
     displayUsage : function() {
-        console.log('displaying usage')
+        console.log('Usage: stavanger-nodeschool [option]')
+        console.log('Options:')
+        console.log('    workshops - list upcomping workshops')
     },
 
     displayError : function(msg) {
@@ -21,10 +23,12 @@ module.exports = {
     },
 
     displayWorkshops : function(workshops) {
-        console.log('displaying workshops', workshops)
+        console.log(chalk.green('Workshops'))
+        console.log(workshops)
     },
 
     grabWorkshops : function(callback) {
+        console.log(chalk.cyan('Downloading list of workshops...'))
         request(workshops_url, function(err, res, payload) {
             if (err) { this.displayError(err) }
             if (res.statusCode != 200) { this.displayError('Unable to grab workshops. Internet says: '+res.statusCode) }
