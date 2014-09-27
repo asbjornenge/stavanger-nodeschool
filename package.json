@@ -1,0 +1,27 @@
+{
+  "name": "stavanger-nodeschool",
+  "version": "1.0.0",
+  "description": "Stavanger NodeSchool cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asbjornenge/stavanger-nodeschool.git"
+  },
+  "keywords": [
+    "stavanger-nodeschool",
+    "nodeschool",
+    "cli"
+  ],
+  "author": "Asbjorn Enge <asbjorn@hanafjedle.net>",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/asbjornenge/stavanger-nodeschool/issues"
+  },
+  "homepage": "https://github.com/asbjornenge/stavanger-nodeschool",
+  "dependencies": {
+    "minimist": "^1.1.0"
+  }
+}

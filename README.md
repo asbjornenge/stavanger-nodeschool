@@ -8,6 +8,6 @@ Stavanger NodeSchool command line interface.
 
 ## Use
 
-    stavanger-nodeschool workshops
+    $ stavanger-nodeschool workshops
 
 enjoy.
