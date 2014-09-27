@@ -24,7 +24,16 @@ module.exports = {
 
     displayWorkshops : function(workshops) {
         console.log(chalk.green('Workshops'))
-        console.log(workshops)
+        workshops.forEach(function(workshop) {
+            console.log(chalk.green('#'+workshop.id), this.fillSpaces(workshop.title,30), chalk.magenta(workshop.date))
+        }.bind(this))
+    },
+
+    mapAndSortWorkshops : function(workshops) {
+        var _workshops = Object.keys(workshops).map(function(key) {
+            return workshops[key]
+        })
+        return _workshops
     },
 
     grabWorkshops : function(callback) {
@@ -32,8 +41,15 @@ module.exports = {
         request(workshops_url, function(err, res, payload) {
             if (err) { this.displayError(err) }
             if (res.statusCode != 200) { this.displayError('Unable to grab workshops. Internet says: '+res.statusCode) }
-            callback(JSON.parse(payload).workshops)
-        })
-    }
+            callback(this.mapAndSortWorkshops(JSON.parse(payload)))
+        }.bind(this))
+    },
+
+    fillSpaces : function (word, len) {
+        while(word.length < len) {
+            word = word+' '
+        }
+        return word
+    },
 
 }
