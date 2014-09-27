@@ -1,6 +1,6 @@
 {
   "name": "stavanger-nodeschool",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Stavanger NodeSchool cli",
   "bin": "./index.js",
   "main": "index.js",
